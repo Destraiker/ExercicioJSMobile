@@ -6,15 +6,22 @@
     <script src='script.js'></script>
 </head>
 
-<body>
-    <p>Você deve setar as suas configurações:</p><br>
-    <form>
-        <input type="text" id="nome" placeholder="Nome">
-        <input type="text" id="cor" placeholder=" Cor favorita">
-        <input type="text" id="idade" placeholder="Idade">
-        <input type="text" id="cidade" placeholder="Cidade onde mora"> 
-        <button onclick='vibracaoSimples()'>Vipração 200ms</button>
-    </form>
+<body id="body">
+    <div id="form">
+        <p>Você deve setar as suas configurações:</p><br>
+        <form>
+            <input type="text" id="nome" placeholder="Nome"><br>
+            <input type="text" id="cor" placeholder=" Cor favorita"><br>
+            <input type="text" id="idade" placeholder="Idade"><br>
+            <input type="text" id="cidade" placeholder="Cidade onde mora"><br>
+            <button onclick='Salvar()'>Salvar preferencias</button>
+        </form>
+    </div>
+    <div id="inicio">
+        <h1 id="nomeH1"></h1>
+        <h2 id="idadeH2"></h2>
+        <p id="cidadeP"></p>
+    </div>
 
 </body>
 

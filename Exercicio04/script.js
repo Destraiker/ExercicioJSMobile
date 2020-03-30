@@ -1,32 +1,28 @@
 
-window.onload = function() {
+window.onload = function () {
   if ('localStorage' in window) {
-    var confirm = localStorage.getItem('nome')|| '';
-    
-    if(confirm==''){
-      document.getElementById('teste').innerHTML="<p>Você deve setar as suas configurações:</p><br><form><input type='text' id='nome' placeholder='Nome'><input type='text' id='cor' placeholder=' Cor favorita'><input type='text' id='idade' placeholder='Idade'><input type='text' id='cidade' placeholder='Cidade onde mora'><button onclick='Salvar()'>Salvar</button></form>";
-    }else{
-      document.getElementById('teste').innerHTML="teste02";
-    }
-       /*
-    const valueInputLocal = document.getElementById('valuelocal');
+    var confirm = localStorage.getItem('nome') || '';
 
-    let reloadInputValue = function () {
-      console.log("Local Storage: ", localStorage.getItem('myKey'));
-      valueInputLocal.value = localStorage.getItem('myKey') || '';
-    }
-     
-    reloadInputValue(); 
+    if (confirm == '') {
+      var inicio = document.getElementById("inicio");
+      if (inicio != null) {
+        inicio.style.display = "none";
+      }
+    } else {
+      var form = document.getElementById("form");
+      form.style.display = "none";
 
-    valueInputLocal.addEventListener('keyup', function () {
-      localStorage.setItem('myKey', this.value);
-    });    */
-    
+      document.getElementById('nomeH1').innerHTML = "Nome: " + localStorage.getItem('nome');
+      document.getElementById('body').style.backgroundColor = localStorage.getItem('cor');
+      document.getElementById('idadeH2').innerHTML = "Idade: " + localStorage.getItem('idade');
+      document.getElementById('cidadeP').innerHTML = "Cidade: " + localStorage.getItem('cidade');
+    }
   }
 };
-function Salvar(){
-    const valueNome = document.getElementById('nome');
-    const valueCor = document.getElementById('cor');
-    const valueIdade = document.getElementById('idade');
-    const valueCidade = document.getElementById('cidade');
+
+function Salvar() {
+  localStorage.setItem('nome', document.getElementById('nome').value);
+  localStorage.setItem('cor', document.getElementById('cor').value);
+  localStorage.setItem('idade', document.getElementById('idade').value);
+  localStorage.setItem('cidade', document.getElementById('cidade').value);
 }
